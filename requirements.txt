@@ -2,3 +2,5 @@ sklearn
 tensorflow
 keras
 streamlit
+scipy
+scikit-learn
