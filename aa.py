@@ -19,6 +19,8 @@ scaler.fit(X)
 
 # Load the trained model
 model = load_model('trained_model.h5')  # Replace with the path to your trained model
+model.compile(loss='mse', optimizer='adam')  # Compile the model with Mean Squared Error loss
+
 
 # Streamlit App
 st.set_page_config(
