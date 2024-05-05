@@ -19,8 +19,9 @@ scaler.fit(X)
 
 # Load the trained model
 model = load_model('trained_model.h5')  # Replace with the path to your trained model
-model.compile(loss='mse', optimizer='adam')  # Compile the model with Mean Squared Error loss
 
+# Compile the model with Mean Squared Error loss
+model.compile(loss='mse', optimizer='adam')
 
 # Streamlit App
 st.set_page_config(
@@ -28,7 +29,6 @@ st.set_page_config(
     page_icon=":chart_with_upwards_trend:",
     layout="wide"
 )
-
 
 # Center the title
 st.markdown("""
@@ -87,6 +87,7 @@ if submitted:
 
     # Display the predicted load with a highlighted result
     st.success(f"Predicted Load: {predicted_load:.2f} tons")
+
 
 
 
