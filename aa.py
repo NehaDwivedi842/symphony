@@ -5,9 +5,6 @@ from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 import streamlit as st
 
-# Define custom Mean Squared Error loss function
-def custom_mse(y_true, y_pred):
-    return K.mean(K.square(y_true - y_pred))
 
 # Load the data for fitting the scaler
 data = pd.read_csv('Load_Calculations_Training_Dataset.csv')  # Replace with your data file
