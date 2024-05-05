@@ -87,6 +87,3 @@ if submitted:
     st.success(f"Predicted Load: {predicted_load:.2f} tons")
 
 
-
-
-
