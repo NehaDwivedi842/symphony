@@ -1,6 +1,5 @@
 import numpy as np
 from tensorflow.keras.models import load_model
-from tensorflow.keras import backend as K
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 import streamlit as st
