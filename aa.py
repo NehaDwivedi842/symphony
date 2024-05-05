@@ -1,8 +1,13 @@
 import numpy as np
 from tensorflow.keras.models import load_model
+from tensorflow.keras import backend as K
 from sklearn.preprocessing import MinMaxScaler
 import pandas as pd
 import streamlit as st
+
+# Define custom Mean Squared Error loss function
+def custom_mse(y_true, y_pred):
+    return K.mean(K.square(y_true - y_pred))
 
 # Load the data for fitting the scaler
 data = pd.read_csv('Load_Calculations_Training_Dataset.csv')  # Replace with your data file
@@ -18,10 +23,7 @@ scaler = MinMaxScaler()
 scaler.fit(X)
 
 # Load the trained model
-model = load_model('trained_model.h5')  # Replace with the path to your trained model
-
-# Compile the model with Mean Squared Error loss
-model.compile(loss='mse', optimizer='adam')
+model = load_model('trained_model.h5', custom_objects={'custom_mse': custom_mse})  # Replace with the path to your trained model
 
 # Streamlit App
 st.set_page_config(
@@ -87,7 +89,6 @@ if submitted:
 
     # Display the predicted load with a highlighted result
     st.success(f"Predicted Load: {predicted_load:.2f} tons")
-
 
 
 
