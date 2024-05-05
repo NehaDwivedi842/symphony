@@ -23,7 +23,7 @@ scaler = MinMaxScaler()
 scaler.fit(X)
 
 # Load the trained model
-model = load_model('trained_model.h5', custom_objects={'custom_mse': custom_mse})  # Replace with the path to your trained model
+model = load_model('trained_model.h5')  # Replace with the path to your trained model
 
 # Streamlit App
 st.set_page_config(
